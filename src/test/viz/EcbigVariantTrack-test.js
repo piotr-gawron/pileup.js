@@ -13,8 +13,6 @@ import TwoBitDataSource from '../../main/sources/TwoBitDataSource';
 import MappedRemoteFile from '../MappedRemoteFile';
 import {FakeTwoBit} from '../FakeTwoBit';
 
-import ReactTestUtils from 'react-dom/test-utils';
-
 describe('EcbigVariantTrack', function() {
   var testDiv = document.getElementById('testdiv');
   if (!testDiv) throw new Error("Failed to match: testdiv");
@@ -57,10 +55,6 @@ describe('EcbigVariantTrack', function() {
     // Release the reference first.
     fakeTwoBit.release(reference);
 
-    var variantClickedData = null;
-    var variantClicked = function(data) {
-      variantClickedData = data;
-    };
     var p = pileup.create(testDiv, {
       range: {contig: '17', start: 9386380, stop: 9537390},
       tracks: [
@@ -73,8 +67,7 @@ describe('EcbigVariantTrack', function() {
           data: pileup.formats.vcf({
             url: '/test-data/test.vcf'
           }),
-          viz: pileup.viz.ecbig(),
-          options: {onVariantClicked: variantClicked},
+          viz: pileup.viz.ecbig()
         }
       ]
     });
