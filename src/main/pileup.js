@@ -49,6 +49,7 @@ import LocationTrack from './viz/LocationTrack';
 import PileupTrack from './viz/PileupTrack';
 import ScaleTrack from './viz/ScaleTrack';
 import VariantTrack from './viz/VariantTrack';
+import EcbigVariantTrack from './viz/EcbigVariantTrack';
 import GenotypeTrack from './viz/GenotypeTrack';
 import Root from './Root';
 
@@ -263,6 +264,7 @@ var pileup = {
     location: makeVizObject(LocationTrack),
     scale:    makeVizObject(ScaleTrack),
     variants: makeVizObject(VariantTrack),
+    ecbig: makeVizObject(EcbigVariantTrack),
     genotypes: makeVizObject(GenotypeTrack),
     pileup:   makeVizObject(PileupTrack)
   },
